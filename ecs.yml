@@ -1,0 +1,13 @@
+imports:
+  - { resource: 'vendor/symplify/easy-coding-standard/config/set/clean-code.yaml' }
+  - { resource: 'vendor/symplify/easy-coding-standard/config/set/symfony.yaml' }
+  - { resource: 'vendor/symplify/easy-coding-standard/config/set/php71.yaml' }
+
+parameters:
+  skip:
+    SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElementsSniff.UnusedMethod:
+      - 'src/Infrastructure/Repository/Processor/AlertingProcessor.php'
+    SlevomatCodingStandard\Sniffs\TypeHints\TypeHintDeclarationSniff.MissingTraversableParameterTypeHintSpecification:
+      - 'src/Domain/Repository/StorageRepositoryInterface.php'
+    PhpCsFixer\Fixer\Phpdoc\PhpdocToCommentFixer:
+      - 'src/Infrastructure/Repository/AlertingRepository.php'
