@@ -1,0 +1,55 @@
+{
+    "name": "adgoal-common/alerting",
+    "type": "library",
+    "description": "Adgoal Alerting common library",
+    "license": "proprietary",
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "ext-redis": "*",
+        "adgoal-common/base": "^4.0",
+        "adgoal-common/value-object": "v3.9.5",
+        "beberlei/assert": "^3.2",
+        "queue-interop/amqp-interop": "^0.8",
+        "queue-interop/queue-interop": "^0.7|^0.8",
+        "enqueue/enqueue": "^0.10",
+        "league/tactician-command-events": "^0.6.0",
+        "psr/log": "^1.1",
+        "php-http/guzzle6-adapter": "^2.0",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.0"
+    },
+    "require-dev": {
+        "jakub-onderka/php-console-highlighter": "^0.4",
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "mockery/mockery": "^1.2",
+        "phan/phan": "4.0.*",
+        "php-coveralls/php-coveralls": "^2.4",
+        "phpmd/phpmd": "^2.6",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-mockery": "^0.12",
+        "phpstan/phpstan-phpunit": "^0.12",
+        "phpunit/phpunit": "^8.0",
+        "roave/security-advisories": "dev-master",
+        "sensiolabs-de/deptrac-shim": "^0.12.0",
+        "symplify/easy-coding-standard": "8.3.*",
+        "vimeo/psalm": "^4.7"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "AdgoalCommon\\Alerting\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AdgoalCommon\\Alerting\\Tests\\Unit\\": "tests/unit"
+        }
+    }
+}

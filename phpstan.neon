@@ -1,0 +1,13 @@
+includes:
+	- vendor/phpstan/phpstan-mockery/extension.neon
+
+#parameters:
+#	excludes_analyse:
+#	    - src/Infrastructure/Testing/RedisInMemory.php
+#	    - src/Infrastructure/Testing/RedisFactory.php
+
+parameters:
+#	autoload_files:
+#		- app/bootstrap.php
+	ignoreErrors:
+		- "#^Unsafe usage of new static\\(\\)\\.$#"
