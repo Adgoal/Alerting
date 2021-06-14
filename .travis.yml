@@ -1,5 +1,4 @@
 dist: focal
-sudo: true
 
 cache:
   directories:
@@ -28,5 +27,7 @@ script:
   - git log $(git describe --abbrev=0 --tags)...HEAD --no-merges --pretty=format:"* [%h](http://github.com/${TRAVIS_REPO_SLUG}/commit/%H) %s (%cN)"
 
 after_success:
-  - set | grep "TRAVIS" > .env.travis
+  - cat .env > .env.travis
+  - set | grep "TRAVIS" >> .env.travis
+  - set | grep "DOCKER" >> .env.travis
   - eval "docker-compose --env-file .env.travis run --rm php sh -lc 'php ./vendor/bin/php-coveralls -v --config .coveralls.yml'"
